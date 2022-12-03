@@ -3,19 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-//Импортируем созданный роутер.
-import Router from './utils/router';
-//Импортируем провайдер для роутера.
-import {RouterProvider} from 'react-router-dom'
-//Импортируем меню
-import Menu from "./components/menu"
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 //Заменяем обычный еомпонент на RouterProvider  и передаем созданный ранее нами роутер в пропс router.
 root.render(
   <React.StrictMode>
-    <Menu />
-    
+    <App />
   </React.StrictMode>
 );
 

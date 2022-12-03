@@ -1,25 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+//Импортируем созданный роутер.
+import Router from './utils/router';
+//Импортируем провайдер для роутера.
+import {RouterProvider} from 'react-router-dom'
+//Импортируем меню
+import Menu from "./components/menu"
+import React from 'react';
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor(){
+    super()
+    //Добавим состояния для компонента.
+    //this.state атрибут React.Component, доступен для инициализации в конструкторе класса.
+    this.state = {
+      menu: [
+        {
+          text: 'Main',
+          link: '/'
+        },
+        {
+          text: 'Goods',
+          link: '/goods'
+        }
+      ]
+    }
+  }
+  render() {
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <React.StrictMode>
+        <Menu menu={this.state.menu} />
+        <RouterProvider router={Router} />
+      </React.StrictMode>
     </div>
-  );
+    );
+  }
 }
 
 export default App;
