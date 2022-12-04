@@ -1,0 +1,8 @@
+.card-list{
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  position: absolute;
+  right: 0;
+  justify-content: center;
+}

@@ -1,5 +1,10 @@
 //Импортируем реакт.
 import React from "react";
+import PropTypes from "prop-types"
+//import { Link } from "react-router-dom";
+import './index.css';
+
+import {menuItemShape} from '../../shapes/menu-item'
 
 class Menu extends React.Component{
     constructor(){
@@ -12,21 +17,36 @@ class Menu extends React.Component{
         //1) Перебрать массив Menu.
         //2) Выводить тег <а> с названием и ссылкой.
         return(
-            <div>
-                <h1>Menu</h1>
-            {
-                menu.map((menuItem, index) => {
-                    console.log(menuItem)
-                    return (
-                        <a key={index} href={menuItem.link}>
-                            {menuItem.text}
-                        </a>
-                    )
-                })
-            }
+            <div className="menu">
+                <div className="menu__content">
+                    <h1 className="menu__title">
+                        Menu
+                    </h1>
+                    <ul>
+                    {
+                        menu.map((menuItem, index) => {
+                            return (
+                                <li key = {index}>
+                                    <a className="menu__link" href={menuItem.link}>
+                                        {menuItem.text}
+                                    </a>
+                                </li>
+                            )
+                        })
+                    }
+                    </ul>
+                </div>
             </div>
         )
     }
 }
 
+//Экспортируем компонент.
+
+//Проверка входящих в компонент типов.
+Menu.propTypes = {
+    menu: PropTypes.arrayOf(
+        menuItemShape
+    )
+}
 export default Menu
