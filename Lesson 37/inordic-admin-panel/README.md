@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Описание проекта InordicAdminPanel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Структура файлов и папок
+1) node_modules: установленные вспомогательные модули приложения.
+- @testing-library/jest-dom: "^5.16.5",
+- @testing-library/react: "^13.4.0",
+- @testing-library/user-event: "^13.5.0",
+- react: "^18.2.0", -- сама библиотека реакт в приложении.
+- react-dom: "^18.2.0", -- библиотека для работы с дом деревом, используем ее для передачи реакт приложения в элемент дом дерева.
+- react-router-dom: "^6.4.4", -- библиотека для навигаци внутри приложения.
+- react-scripts: "5.0.1", -- скрипты, которые предлагает реакт по умолчанию.
+- web-vitals: "^2.1.4"
 
-## Available Scripts
+2) public
+Вся статика проекта (фавиконки, картинки, статический html)
 
-In the project directory, you can run:
+3) src
+Папки:
+- components -- общие компоненты проекта.
+    - good-item -- карточка одного товара.
+        - index.css -- стили для карточки товара.
+        - index.js -- шаблон-компонент для отображения и логики карточки товара.
+    - menu -- боковое меню проекта.
+        - index.css -- стили для бокового меню.
+        - index.js -- шаблон-компонент для отображения и логики бокового меню.
 
-### `npm start`
+- pages -- страницы нашего приложения.
+    - goods -- страница товаров.
+        - index.css -- стили для страницы товаров.
+        - index.js -- шаблон-компонент для отображения и логики страницы товаров.
+    - main -- страница основная.
+        - index.css -- стили для основной страницы.
+        - index.js -- шаблон-компонент для отображения и логики основной страницы.
+    - users -- страница пользователей.
+        - index.css -- стили для страницы пользователей.
+        - index.js -- шаблон-компонент для отображения и логики страницы пользователей.
+    - reviews -- страница отзывов.
+        - index.css -- стили для страницы отзывов.
+        - index.js -- шаблон-компонент для отображения и логики страницы отзывов.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- shapes -- шейпы для проптайпов (проверка типов входящих значений).
+    - menu-item.js -- шейп для проверки пропсов в компоненте меню.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- stub -- заглушки (имитаци ответа от сервера) для более быстрой локальной разработки.
+    - goods.json -- имитация ответа от сервера, которая возвращает список товаров.
 
-### `npm test`
+- utils -- вспомогательные утилиты для приложения.
+    - router -- содержит логику роутинга приложения.
+        - index.js -- логика роутинга.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- App.css -- общие стили для приложения.
+- App.js -- главный компонент приложения.
+- App.test.js -- юнит тест для компонента App.
+- index.css -- общие стили для приложения.
+- index.js -- точка входа в приложение, именно тут начинается работа компонентов.
+- reportWebVitals.js (описать в конце проекта).
+- setupTests.js (описать в конце проекта).
 
-### `npm run build`
+4) .gitignore
+Файлы и папки, которые игнорируются при отправке в гит.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5) package-lock.json
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6) package.json
+dependencies -- все зависимости проекта.
+scripts -- все скрипты приложения (start, build, test, eject).
+Поля
+- name -- название нашего модуля.
+- version -- версия проекта.

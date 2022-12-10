@@ -1,0 +1,7 @@
+.card{
+    outline: 1px solid black;
+    };
+    
+.card__img {
+      width: 100px;
+    };
