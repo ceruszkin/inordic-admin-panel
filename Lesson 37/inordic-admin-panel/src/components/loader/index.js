@@ -6,14 +6,9 @@ import './index.css'
  * ДЗ доделать компонент
  */
 export function Loader(){
-    return <>Загрузка</>
+    return(
+        <div className='overlay'>
+            <img src='https://study.inordic.ru/images/icons/logo.svg' />
+        </div>
+    )
 }
-
-//export const LoadComponent = Loader
-/*
-export const Loader = () => {
-    return <>Загрузка</>
-}
-*/
-//Самый приоритетный вариант для написания коротких компонентов в коде
-//export const Loader = () => <>Загрузка</>

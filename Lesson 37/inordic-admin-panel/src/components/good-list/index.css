@@ -1,0 +1,30 @@
+.card-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 85%;
+    position: absolute;
+    right: 0;
+    justify-content: left;
+}
+
+.panel-button button, .panel-button input{
+    background: #2a284f;
+    margin: 5px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.panel-button input{
+    color: white;
+}
+
+.panel-button input::placeholder {
+    color: white;
+}
+
+.panel-button input[type='text']{
+    outline: #2a284f;
+    background: white;
+    color: #2a284f;
+}

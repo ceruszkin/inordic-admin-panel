@@ -10,7 +10,8 @@ import Goods from '../../pages/goods'
 import MainLayout from '../../components/main-layout'
 
 import {GoodList} from '../../components/good-list'
-import GoodDetail from '../../components/good-detail'
+import {GoodDetail} from '../../components/good-detail'
+import {Add} from '../../pages/goods/add'
 
 /*
 Router -- утилс, который определеят маршруты приложения.
@@ -42,6 +43,10 @@ const Router = createBrowserRouter(
                         {
                             path: '/goods/:id',
                             element: <GoodDetail />
+                        },
+                        {
+                            path: '/goods/add',
+                            element: <Add />
                         }
                     ]
                 }

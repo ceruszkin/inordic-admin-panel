@@ -1,7 +1,6 @@
 //Импортируем реакт
 import React from 'react'
 import PropTypes from 'prop-types';
-//TODO доработать
 import { Link } from "react-router-dom";
 
 import './index.css';
@@ -21,6 +20,7 @@ class Menu extends React.Component{
         //2) выводить тэе <a> с названием и ссылкой
         return (
             <div className='menu'>
+                <a className="logo-full" href="/"></a>
                 <div className='menu__content'>
                     <h1 className='menu__title'>
                         Меню
