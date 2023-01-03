@@ -5,24 +5,20 @@ import {
 //Импортируем страницы приложения для дальнейшего отображения на определенных маршрутах
 import Main from '../../pages/main'
 import Goods from '../../pages/goods'
+import {Add as AddGood} from '../../pages/goods/add'
 
 //Импортируем созданный нами лайаут
 import MainLayout from '../../components/main-layout'
 
 import {GoodList} from '../../components/good-list'
 import {GoodDetail} from '../../components/good-detail'
-import {Add} from '../../pages/goods/add'
 
-/*
-Router -- утилс, который определеят маршруты приложения.
-Маршруты:
-Основной маршрут -- "/", компонент Main.
-Товары -- "/goods", компонент Goods.
-*/
-
-//Описываем роутинг в приложении
-// path - это путь в браузерной строке
-// element - это тот компонент, который будет по указанному выше пути отобрадаться 
+/**
+ * Router - утилс который опредяет маршруты приложения
+ * Маршруты:
+ * Основной - '/': Отображается компонент Main (Основная страница)
+ * Товары - '/goods': Отображается компонент Goods (товары)
+ */
 const Router = createBrowserRouter(
     [
         {
@@ -46,7 +42,7 @@ const Router = createBrowserRouter(
                         },
                         {
                             path: '/goods/add',
-                            element: <Add />
+                            element: <AddGood />
                         }
                     ]
                 }
@@ -55,4 +51,4 @@ const Router = createBrowserRouter(
     ]
 )
 //Экспортируем роутер
-export default Router
+export default Router 

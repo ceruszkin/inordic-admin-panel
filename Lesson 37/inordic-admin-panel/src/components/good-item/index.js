@@ -31,7 +31,7 @@ class GoodItem extends React.Component{
                 curentForDel: true
             })
             selected.push(data)
-            //Копирование объектов на 43 занятии
+            //setSelected объектов на 43 занятии
             setSelected(
                 [...selected]
             )
