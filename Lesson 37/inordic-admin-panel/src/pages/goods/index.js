@@ -5,7 +5,7 @@ import {Outlet} from 'react-router-dom'
 import './index.css'
 
 /**
- * Goods - компонент статики старицы Ассортимент
+ * Goods - компонент статики страницы Ассортимент
  */
 class Goods extends React.Component{
     constructor(){
@@ -20,5 +20,5 @@ class Goods extends React.Component{
         )
     }
 }
-//Экспортируем наш компонент
+//Экспортируем компонент
 export default Goods

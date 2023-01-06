@@ -1,22 +1,22 @@
 .card-list{
     display: flex;
     flex-wrap: wrap;
-    width: 85%;
+    width: 80%;
     position: absolute;
     right: 0;
     justify-content: left;
 }
 
 .panel-button button, .panel-button input{
-    background: #2a284f;
+    background: #171A21;
     margin: 5px;
-    color: white;
+    color: #7A93AC;
     padding: 5px;
     border-radius: 5px;
 }
 
 .panel-button input{
-    color: white;
+    color: #7A93AC;
 }
 
 .panel-button input::placeholder {
@@ -24,7 +24,7 @@
 }
 
 .panel-button input[type='text']{
-    outline: #2a284f;
+    outline: #171A21;
     background: white;
-    color: #2a284f;
+    color: #171A21;
 }

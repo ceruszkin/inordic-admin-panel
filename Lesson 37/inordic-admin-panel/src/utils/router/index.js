@@ -5,6 +5,8 @@ import {
 //Импортируем страницы приложения для дальнейшего отображения на определенных маршрутах
 import Main from '../../pages/main'
 import Goods from '../../pages/goods'
+import Reviews from '../../pages/reviews'
+import Users from '../../pages/users'
 import {Add as AddGood} from '../../pages/goods/add'
 
 //Импортируем созданный нами лайаут
@@ -45,6 +47,14 @@ const Router = createBrowserRouter(
                             element: <AddGood />
                         }
                     ]
+                },
+                {
+                    path: '/users',
+                    element: <Users />,
+                },
+                {
+                    path: '/reviews',
+                    elementL: <Reviews />
                 }
             ]
         }

@@ -17,6 +17,14 @@ class MainLayout extends React.Component{
               {
                 text: 'Goods',
                 link: '/goods'
+              },
+              {
+                text: 'Reviews',
+                link: '/reviews'
+              },
+              {
+                text: 'Users',
+                link: '/users'
               }
             ]
           }
