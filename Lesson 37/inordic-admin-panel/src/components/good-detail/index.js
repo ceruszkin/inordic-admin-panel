@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useParams, useNavigate, useLocation} from 'react-router-dom'
 
 import {Loader} from '../loader'
+import {imageToBS64} from '../../utils/image-to-bs64'
 
 import './index.css'
 
@@ -62,30 +63,36 @@ export function GoodDetail(){
         const price = formData.get('PRICE')
         const count = formData.get('COUNT')
 
-        //Найдем редактируемый элемент, внутри состояния goods
-        goods.find((good, index) => {
-            // У каждого переребираемого товара есть свой  id
-            // Необходимо сравнить его с id из useParams
-            if(good.ID == id){
-                // если условие прошло, значит мы нашли нужный товар
-                goods[index].TITLE = title
-                goods[index].DISCR = discr
-                goods[index].PRICE = price
-                goods[index].COUNT = count
-                console.log('Нашел и поменял')
-                //Отпрвляемся на страницу, со списком товаров
-                navigate("/goods", {
-                    state: {
-                        goods: goods,
-                    }
-                });
-            }
-        })
-                                    
-
-
-
         //Отправляем форм дату на сервер
+
+        // Обновление на интерфейся
+        imageToBS64(img, function(imgBS64){
+
+            //Найдем редактируемый элемент, внутри состояния goods
+            goods.find((good, index) => {
+                // У каждого переребираемого товара есть свой  id
+                // Необходимо сравнить его с id из useParams
+                if(good.ID == id){
+                    // если условие прошло, значит мы нашли нужный товар
+                    goods[index].TITLE = title
+                    goods[index].DISCR = discr
+                    goods[index].PRICE = price
+                    goods[index].COUNT = count
+
+                    if(imgBS64){
+                        goods[index].IMG = imgBS64
+                    }
+                    console.log('Нашел и поменял')
+                    //Отпрвляемся на страницу, со списком товаров
+                    navigate("/goods", {
+                        state: {
+                            goods: goods,
+                        }
+                    });
+                }
+            })
+
+        })
 
     }
 
